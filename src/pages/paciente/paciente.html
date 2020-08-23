@@ -8,5 +8,60 @@
 </ion-header>
 
 <ion-content padding>
-<p>Pagina Paciente LOGADO</p>
+
+ 
+    <h3>{{ fichaPaciente?.nome }}</h3>               <!-- notice the question mark -->
+    <h1>{{ fichaPaciente?.doadorDeOrgao }}</h1>
+    <h1>{{ fichaPaciente?.telefone }}</h1>
+    <h1>{{ fichaPaciente?.peso }}</h1>
+    <h1>{{ fichaPaciente?.altura }}</h1>
+    <h1>{{ fichaPaciente?.nascimento }}</h1>
+    <h1>{{ fichaPaciente?.tipoSanguinio }}</h1>
+    <h1>{{ fichaPaciente?.estadoMoradia }}</h1>
+    <h1>{{ fichaPaciente?.observacao }}</h1>
+   
+    <!-- 
+    <select>
+      <option *ngFor="let medicamento of medicamentos">
+        {{medicamento?.nome}}
+      </option>
+    </select> 
+   -->
+  
+    <!-- Default reorder icon, end aligned items -->
+
+ <h3 style="color:red"> Medicamentos </h3>
+<ion-item *ngFor="let medicamento of medicamentos">
+  <ion-label >
+    {{medicamento?.nome}}
+  </ion-label>
+  <ion-reorder slot="end"></ion-reorder>
+</ion-item>
+
+<h3 style="color:red"> Doenças </h3>
+<ion-item *ngFor="let doenca of doencas">
+  <ion-label >
+    {{doenca?.nome}}
+  </ion-label>
+  <ion-reorder slot="end"></ion-reorder>
+</ion-item>
+
+<h3 style="color:red"> Alergia </h3>
+<ion-item *ngFor="let alergia of alergias">
+  <ion-label >
+    {{alergia?.nome}}
+  </ion-label>
+  <ion-reorder slot="end"></ion-reorder>
+</ion-item>
+
+<h3 style="color:red"> Contatos de Emergencia </h3>
+<ion-item *ngFor="let contatoDeEmergencia of contatoDeEmergencias">
+  <ion-label >
+    {{contatoDeEmergencia?.nome}}
+    {{contatoDeEmergencia?.numero}}
+    {{contatoDeEmergencia?.paretesco}}
+  </ion-label>
+  <ion-reorder slot="end"></ion-reorder>
+</ion-item>
+
 </ion-content>

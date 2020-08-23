@@ -1,5 +1,12 @@
+import { ContatosDeEmergencia } from './../../models/ContatosDeEmergencia';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
+import { Alergia } from './../../models/Alergia';
+import { Doenca } from './../../models/Doenca';
+import { PacienteService } from './../../services/domain/paciente.service';
+import { PacienteDTO } from '../../models/DTO/Paciente.dto';
+import { Medicamento } from '../../models/Medicamento';
 
 /**
  * Generated class for the PacientePage page.
@@ -15,11 +22,32 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class PacientePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  public fichaPaciente : PacienteDTO;
+
+  public medicamentos: Medicamento[];
+  public doencas : Doenca[];
+  public alergias : Alergia[];
+  public contatoDeEmergencias : ContatosDeEmergencia[];
+    
+  constructor(public navCtrl: NavController, 
+               public navParams: NavParams,
+               public pacienteService: PacienteService) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad PacientePage');
+    this.pacienteService.fichaDoPaciente()
+       .subscribe(reponse => {
+         this.fichaPaciente = reponse;
+        
+        this.medicamentos = this.fichaPaciente.medicamentos;
+        this.doencas = this.fichaPaciente.doencas;
+        this.alergias = this.fichaPaciente.alergias;
+        this.contatoDeEmergencias = this.fichaPaciente.contatosDeEmergencias;
+         
+       },
+       error => {
+          console.log(error);
+       });
   }
 
 }
