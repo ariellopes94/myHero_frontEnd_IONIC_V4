@@ -1,7 +1,8 @@
 import { Medicamento } from './Medicamento';
-import { ContatoDeEmergencia } from './ContatoDeEmergencia';
 import { Alergia } from './Alergia';
 import { Doenca } from './Doenca';
+import { ContatosDeEmergencia } from './ContatosDeEmergencia';
+
 export interface Paciente{
 
     cpf: string;
@@ -19,7 +20,7 @@ export interface Paciente{
 
     doencas: Doenca[];
     alergias: Alergia[];
-    contatosDeEmergencias: ContatoDeEmergencia[];
+    contatosDeEmergencias: ContatosDeEmergencia[];
     medicamento: Medicamento[];
 
 

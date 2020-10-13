@@ -14,14 +14,16 @@ export class PacienteService {
     fichaDoPaciente() : Observable<PacienteDTO> {
 
         //APAGAR DPS
-        var numeroFichaPaciente : string = window.location.href;
-        numeroFichaPaciente = numeroFichaPaciente.replace("http://localhost:8100/#/paciente/", "");
+       // var numeroFichaPaciente : string = window.location.href;
+       // numeroFichaPaciente = numeroFichaPaciente.replace("http://localhost:8100/#/paciente/", "");
         //alert(numeroFichaPaciente);
+
+        var numeroFichaPaciente : string = 'AX700';
         //AX700
 
         //
 
         return this.http.get <PacienteDTO>(`${API_CONFIG.baseUrl}/pacientes/fichaDoPaciente/${numeroFichaPaciente}`)
-    
+
     }
 }

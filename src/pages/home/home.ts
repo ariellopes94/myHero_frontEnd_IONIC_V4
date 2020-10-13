@@ -16,10 +16,10 @@ export class HomePage {
   }
 
   ionViewDidLeave(){
-   this.menu.swipeEnable(true) 
+   this.menu.swipeEnable(true)
   }
 
-  login(){
+  navigateToPacienteCreate(){
     this.navCtrl.setRoot('PacientePage');
   }
 
