@@ -6,13 +6,13 @@
   <form>
     <ion-item>
       <ion-label stacked>CPF</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input [(ngModel)]="creds.cpf" name="cpf" type="text"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label stacked>Senha</ion-label>
-      <ion-input type="password"></ion-input>
+      <ion-input [(ngModel)]="creds.senha" name="senha" creds type="password"></ion-input>
     </ion-item>
-    <button ion-button block>Entrar</button>
+    <button ion-button block (click)="navigateToUsuarioLogado()">Entrar</button>
   </form>
   <button ion-button outline block (click)="navigateToPacienteCreate()">Registar</button>
 
