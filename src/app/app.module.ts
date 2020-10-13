@@ -1,3 +1,4 @@
+import { AuthService } from './../services/auth.service';
 import { PacienteService } from './../services/domain/paciente.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
@@ -29,6 +30,7 @@ import { ErrorInterceptorProvider } from '../interceptors/error-interceptor';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     PacienteService,
     ErrorInterceptorProvider,
+    AuthService
   ]
 })
 export class AppModule {}
