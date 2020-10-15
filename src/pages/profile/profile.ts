@@ -1,6 +1,8 @@
 import { StorageService } from './../../services/storage.service';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { PacienteService } from '../../services/domain/paciente.service';
+import { PacienteProfileDTO } from '../../models/DTO/paciente_profile.dto';
 
 /**
  * Generated class for the ProfilePage page.
@@ -16,17 +18,25 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ProfilePage {
 
-  cpf: string;
+  paciente : PacienteProfileDTO;
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
-              public storage: StorageService) {
+              public storage: StorageService,
+              public pacienteService: PacienteService) {
   }
 
   ionViewDidLoad() {
    let localUser= this.storage.getLocalUser();
    if(localUser && localUser.cpf){
-     this.cpf = localUser.cpf;
+     //this.cpf = localUser.cpf;
+
+     this.pacienteService.findByCpf(localUser.cpf)
+          .subscribe(response => {
+            this.paciente = response;
+            //BuscarImage
+          },
+          error => {});
    }
 
   }
