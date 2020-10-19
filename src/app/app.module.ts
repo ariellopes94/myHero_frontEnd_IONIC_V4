@@ -30,8 +30,8 @@ import { ErrorInterceptorProvider } from '../interceptors/error-interceptor';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    PacienteService,
     AuthInterceptorProvider,
+    PacienteService,
     ErrorInterceptorProvider,
     AuthService,
     StorageService

@@ -33,12 +33,18 @@ export class ProfilePage {
 
      this.pacienteService.findByCpf(localUser.cpf)
           .subscribe(response => {
-            this.paciente = response;
+            this.paciente = response  as PacienteProfileDTO;;
             //BuscarImage
           },
-          error => {});
-   }
-
+          error => {
+            if (error.status == 403) {
+              this.navCtrl.setRoot('HomePage');
+            }
+          });
+      }
+   else {
+    this.navCtrl.setRoot('HomePage');
+  }
   }
 
 }
