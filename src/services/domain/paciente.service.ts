@@ -31,11 +31,14 @@ export class PacienteService {
 
     findByCpf(cpf: string): Observable<PacienteProfileDTO> {
 
+      /*
         let token = this.storage.getLocalUser().token
         let authHeader = new HttpHeaders({'Authorization': 'Bearer ' + token})
+       */
 
         return this.http.get<PacienteProfileDTO>(
-          `${API_CONFIG.baseUrl}/pacientes/cpf?value=${cpf}`,
-           {'headers': authHeader});
+          `${API_CONFIG.baseUrl}/pacientes/cpf?value=${cpf}`);
+
+          //,{'headers': authHeader}
     }
 }
