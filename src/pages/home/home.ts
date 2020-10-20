@@ -53,4 +53,8 @@ export class HomePage {
     this.navCtrl.setRoot('PacientePage');
   }
 
+  cadastrar() {
+    console.log("PASOU")
+    this.navCtrl.push('PacienteCadastroPage');
+  }
 }
