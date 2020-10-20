@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
@@ -15,11 +16,17 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class PacienteCadastroPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  formGroup:FormGroup;
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad PacienteCadastroPage');
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              public formBuilder: FormBuilder) {
+
+                this.formGroup = this.formBuilder.group({
+                    nome:['Ariel',[Validators.required, Validators.maxLength(5), Validators.maxLength(120)]],
+                    email:['ariel@gmail.com',[Validators.required, Validators.email]]
+
+                  });
   }
 
   cadastrarForm() {

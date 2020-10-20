@@ -5,14 +5,14 @@
 </ion-header>
 
 <ion-content padding>
-  <form (ngSubmit)="cadastrarForm(); $event.preventDefault()">
+  <form [formGroup]="formGroup" (ngSubmit)="cadastrarForm(); $event.preventDefault()">
     <ion-item>
       <ion-label stacked>Nome*</ion-label>
-      <ion-input name="nome" type="text"></ion-input>
+      <ion-input formControlName="nome" type="text"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label stacked>Email*</ion-label>
-      <ion-input name="email" type="text"></ion-input>
+      <ion-input formControlName="email" type="text"></ion-input>
     </ion-item>
     <ion-list radio-group name="tipo">
       <ion-list-header>
