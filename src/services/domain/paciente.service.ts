@@ -1,7 +1,7 @@
 import { PacienteProfileDTO } from './../../models/DTO/paciente_profile.dto';
 import { StorageService } from './../storage.service';
 import { Injectable } from "@angular/core";
-import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
 import { Observable } from 'rxjs/Rx';
 
 import { PacienteDTO } from '../../models/DTO/Paciente.dto';
@@ -31,14 +31,8 @@ export class PacienteService {
 
     findByCpf(cpf: string): Observable<PacienteProfileDTO> {
 
-      /*
-        let token = this.storage.getLocalUser().token
-        let authHeader = new HttpHeaders({'Authorization': 'Bearer ' + token})
-       */
-
         return this.http.get<PacienteProfileDTO>(
           `${API_CONFIG.baseUrl}/pacientes/cpf?value=${cpf}`);
 
-          //,{'headers': authHeader}
     }
 }

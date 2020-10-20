@@ -28,7 +28,16 @@ export class HomePage {
    this.menu.swipeEnable(true)
   }
 
-  navigateToUsuarioLogado(){
+  ionViewDidEnter() {
+    this.auth.refreshToken()
+      .subscribe(response => {
+        this.auth.successfulLogin(response.headers.get('Authorization'));
+        this.navCtrl.setRoot('PacientePage');
+      },
+      error => {});
+  }
+
+  login(){
     this.auth.authenticate(this.creds)
       .subscribe(response => {
         this.auth.successfulLogin(response.headers.get('Authorization'));
