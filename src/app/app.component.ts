@@ -37,17 +37,17 @@ export class MyApp {
       this.splashScreen.hide();
     });
   }
+//
 
-  openPage(page: {title:string, component:string}) {
+openPage(page : {title:string, component:string}) {
 
-    switch (page.title){
-      case(page.title):
-        this.auth.logout();
-        this.nav.setRoot('HomePage')
+    switch (page.title) {
+      case 'Logout':
+      this.auth.logout();
+      this.nav.setRoot('HomePage');
       break;
 
-
-     default:
+      default:
       this.nav.setRoot(page.component);
     }
   }

@@ -37,7 +37,8 @@ export class AuthService {
             observe: 'response',
             responseType: 'text'
         });
-      }
+}
+
 
   successfulLogin(authorizationValue : string) {
     let tok = authorizationValue.substring(7);
@@ -49,7 +50,9 @@ export class AuthService {
     this.storage.setLocalUser(user);
 }
 
+
 logout() {
     this.storage.setLocalUser(null);
 }
+
 }

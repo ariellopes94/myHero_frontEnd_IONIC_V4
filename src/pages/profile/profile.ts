@@ -33,7 +33,7 @@ export class ProfilePage {
 
      this.pacienteService.findByCpf(localUser.cpf)
           .subscribe(response => {
-            this.paciente = response  as PacienteProfileDTO;;
+            this.paciente = response;
             //BuscarImage
           },
           error => {
