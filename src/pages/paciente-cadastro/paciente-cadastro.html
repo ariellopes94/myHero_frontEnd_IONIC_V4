@@ -69,10 +69,9 @@
       <ion-input name="telefone3" type="text"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label stacked>Estado*</ion-label>
-      <ion-select name="estadoId" (ionChange)="updateCidades()">
-        <ion-option value="1">Minas Gerais</ion-option>
-        <ion-option value="2">São Paulo</ion-option>
+      <ion-label stacked>Doencas*</ion-label>
+      <ion-select name="doencasId" (ionChange)="updateCidades()">
+        <ion-option *ngFor="let doenca of doencas; first as f" [value]="doenca.id" [selected]="f">{{ doenca.nome }}</ion-option>
       </ion-select>
     </ion-item>
     <ion-item>

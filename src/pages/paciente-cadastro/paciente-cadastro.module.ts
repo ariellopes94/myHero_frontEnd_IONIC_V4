@@ -1,3 +1,4 @@
+import { DoencasService } from './../../services/domain/doencas.service';
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { PacienteCadastroPage } from './paciente-cadastro';
@@ -9,5 +10,8 @@ import { PacienteCadastroPage } from './paciente-cadastro';
   imports: [
     IonicPageModule.forChild(PacienteCadastroPage),
   ],
+  providers: [
+    DoencasService
+  ]
 })
 export class PacienteCadastroPageModule {}
