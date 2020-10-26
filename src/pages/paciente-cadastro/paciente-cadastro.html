@@ -6,14 +6,98 @@
 
 <ion-content padding>
   <form [formGroup]="formGroup" (ngSubmit)="cadastrarForm(); $event.preventDefault()">
+
     <ion-item>
-      <ion-label stacked>Nome*</ion-label>
+      <ion-label stacked>Cpf*</ion-label>
       <ion-input formControlName="nome" type="text"></ion-input>
     </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Nome completo*</ion-label>
+      <ion-input formControlName="nome" type="text"></ion-input>
+    </ion-item>
+
     <ion-item>
       <ion-label stacked>Email*</ion-label>
       <ion-input formControlName="email" type="text"></ion-input>
     </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Telefone*</ion-label>
+      <ion-input name="telefone1" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Doador de orgao*</ion-label>
+      <ion-input name="DoadorDeOrgao" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Peso*</ion-label>
+      <ion-input name="peso" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Doador de orgao*</ion-label>
+      <ion-input name="doadorDeOrgao" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Altura*</ion-label>
+      <ion-input name="altura" type="text"></ion-input>
+    </ion-item>
+
+    <!-- DATA DE nascimento-->
+    <ion-item>
+      <ion-label stacked>dia*</ion-label>
+      <ion-input name="dia" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Mês*</ion-label>
+      <ion-input name="mes" type="text"></ion-input>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label stacked>Ano*</ion-label>
+      <ion-input name="ano" type="text"></ion-input>
+    </ion-item>
+
+ <!--Fim DATA DE nascimento-->
+
+ <!--SELECT-->
+  <ion-item>
+    <ion-label stacked>Gênero*</ion-label>
+    <ion-input name="genero" type="text"></ion-input>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-label stacked>Tipo sanguínio*</ion-label>
+    <ion-input name="genero" type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label stacked>Estado de moradia*</ion-label>
+    <ion-input name="estadoMoradia" type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label stacked>Observação</ion-label>
+    <ion-input name="observacao" type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label stacked>Senha*</ion-label>
+    <ion-input name="senha" type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label stacked>Confirme*</ion-label>
+    <ion-input name="confirmarSenha" type="text"></ion-input>
+  </ion-item>
+
     <ion-list radio-group name="tipo">
       <ion-list-header>
         Tipo de cliente

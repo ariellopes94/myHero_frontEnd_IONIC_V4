@@ -35,6 +35,8 @@ export class PacienteCadastroPage {
   }
 
 ionViewDidLoad(){
+
+  /*
   this.doencaService.findAll()
     .subscribe(response => {
       this.doecas = response;
@@ -42,6 +44,7 @@ ionViewDidLoad(){
       console.log(this.doecas)
       this.formGroup.controls.doencasId.setValue(this.doecas[0].id)
     })
+    */
 }
 
   cadastrarForm() {
