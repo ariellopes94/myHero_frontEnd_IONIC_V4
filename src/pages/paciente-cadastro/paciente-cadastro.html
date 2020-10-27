@@ -61,25 +61,53 @@
             (onChange)="medicamentosChange($event)" name="mutlicoSelectAlergias">
           </ionic-selectable>
         </ion-item>
-        <!---->
 
         <!-- ESTADO DE MORADIA-->
 
         <ion-item>
           <ion-label stacked>ESTADO DE MORADIA</ion-label>
           <ionic-selectable [ngModelOptions]="{standalone: true}"
-              [isMultiple]="true"
             item-content
-            [(ngModel)]="alergia"
-            [items]="alergias"
+            [(ngModel)]="estadoDeMoradia"
+            [items]="estadoDeMoradias"
             itemValueField="id"
             itemTextField="nome"
             [canSearch]="true"
-            (onChange)="alergiasChange($event)" name="mutlicoSelectAlergias">
+            (onChange)="estadoDeMoradiaChange($event)" name="mutlicoSelectEstadoDeMoradia">
+          </ionic-selectable>
+        </ion-item>
+
+        <!-- Tipo sanguíneo-->
+
+        <ion-item>
+          <ion-label stacked>Tipo sanguíneo</ion-label>
+          <ionic-selectable [ngModelOptions]="{standalone: true}"
+            item-content
+            [(ngModel)]="tipoSaquinio"
+            [items]="tipoSaquinios"
+            itemValueField="id"
+            itemTextField="nome"
+            [canSearch]="true"
+            (onChange)="tipoSaquinioChange($event)" name="mutlicoSelectTipoSaquinio">
           </ionic-selectable>
         </ion-item>
 
         <!---->
+        <!---->
+        <ion-item>
+          <ion-label>Gênero</ion-label>
+          <ion-select [(ngModel)]="genero" [ngModelOptions]="{standalone: true}">
+            <ion-option value="f">Feminino</ion-option>
+            <ion-option value="m">Masculino</ion-option>
+          </ion-select>
+        </ion-item>
+
+        <!--DATA-->
+        <ion-item>
+          <ion-label>Data de nascimento</ion-label>
+          <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="dataNascimento" [ngModelOptions]="{standalone: true}"></ion-datetime>
+        </ion-item>
+
 
     <ion-item>
       <ion-label stacked>Cpf*</ion-label>
