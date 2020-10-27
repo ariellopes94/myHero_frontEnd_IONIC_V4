@@ -13,6 +13,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HttpClientModule } from '@angular/common/http'
 import { ErrorInterceptorProvider } from '../interceptors/error-interceptor';
 
+
+import { IonicSelectableModule } from 'ionic-selectable';
+
 @NgModule({
   declarations: [
     MyApp
@@ -21,6 +24,7 @@ import { ErrorInterceptorProvider } from '../interceptors/error-interceptor';
     BrowserModule,
     HttpClientModule,
     IonicModule.forRoot(MyApp),
+    IonicSelectableModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
